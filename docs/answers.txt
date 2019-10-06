@@ -1,0 +1,63 @@
+John Beckmann
+
+(a) $ git push
+
+	Enumerating objects: 9, done.
+
+	Counting objects: 100% (9/9), done.
+
+	Delta compression using up to 4 threads
+
+	Compressing objects: 100% (5/5), done.
+
+	Writing objects: 100% (7/7), 732 bytes | 146.00 KiB/s, done.
+
+	Total 7 (delta 2), reused 0 (delta 0)
+
+	remote: Resolving deltas: 100% (2/2), completed with 1 local object.
+
+	To https://github.com/John-Beckmann/assignment2.git
+
+		f4975e5..54b25eb  master -> master
+
+		
+(b) There's been 6 commits made for the repository. I used "git log" to see all of the commits.
+
+	
+(c) .gitignore was last changed on Wednesday September 25, 18:13:30 2019. I found this by typing the command "git log --follow .gitignore".
+
+
+(d)	One reason branches are used is so the main code base remains stable while new code is being developed and tested.
+
+	Another reason is to allow multiple different pieces of code to be developed independently and then merged into the main branch piece by piece.
+
+
+(e)	Git log shows the commit history for the currently active branch while git status shows the files that have been modified and are staged
+
+	for the next commit.
+
+
+(f) I would use, "git log --follow Vehicle.h".
+
+
+(g)	I would use, 'git log --all --grep="file"'. 
+
+(h)	
+	I. Inheritance refers to when a class aquires or "inherits" methods and attributes from another class.
+
+	II. Polymorphism refers to having a single template or interface that is comaptible with several different underlying types.
+
+	III. Encapsulation refers to the bundling of both data and methods that operate on that data into one object. It also refers to the way
+
+		 that data is hidden and given access to by ways of it's object's methods and permissions.
+
+
+(i)	The main difference between the "Dictator and Lieutenants" workflow and the "Integration manager" workflow is that the "Dictator and Lieutenants" 
+	workflow has an extra layer of people doing merges and conflict resolutions between the developers and the centralized person that makes the final 
+	pushes to the master.
+
+
+(j) A team of 100 developers would bebefit from the "Dictator and Lieutenants" workflow over the "Centralized" workflows because in a team of that size the 
+	amount of code that would be generated would be huge and the master would constantly be changed by other developers. It would make it harder for devlopers to
+	merge their code with all the possible new conflicts that could be constantly occuring in the main branch. The "Dictator and Lieutenants" workflow would allow
+	coders to focus more on low level merges and writing new code and let the Lieutenants and Dictator focus on the high level.
