@@ -61,3 +61,8 @@ John Beckmann
 	amount of code that would be generated would be huge and the master would constantly be changed by other developers. It would make it harder for devlopers to
 	merge their code with all the possible new conflicts that could be constantly occuring in the main branch. The "Dictator and Lieutenants" workflow would allow
 	coders to focus more on low level merges and writing new code and let the Lieutenants and Dictator focus on the high level.
+	
+	
+	
+5. 	The Driver simulation was using polymorphism because some classes were inheriting from others and so one class could be used with functions of another class. Encapsulation
+	was also used because the data and methods were bundled in classes and were separated into public and private sections so not everyone could access them directly.
