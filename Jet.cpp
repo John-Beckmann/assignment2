@@ -1,25 +1,58 @@
 // John Beckmann created this.
 
-#ifndef DRIVINGSIMULATOR_JET_H
-#define DRIVINGSIMULATOR_JET_H
+#include "Jet.h"
+#include <cstdlib>
+#include <ctime>
 
-#include "PoweredVehicle.h"
 
-class Jet : public PoweredVehicle 
+Jet::Jet()
 {
-	private:
-		int numberOfEngines;
+	srand(time(0));
+    numberOfEngines = 1;
+    setBrand("unknown");
+    setModel("unknown");
+}
 
-	public:
-		Jet();
+Jet::Jet(string brand, string model, string fuelType, int numEngines)
+{
+	srand(time(0));
+    setBrand(brand);
+    setModel(model);
+    setFuelType(fuelType);
+    setNumEngines(numEngines);
+}
 
-		explicit Jet(string brand, string model, string fuelType, int numEngines);
+Jet::~Jet() = default;
 
-		virtual ~Jet();	
-		int getNumEngines();
-		void setNumEngines(int numEngines);
-		virtual double mileageEstimate(double time);
-		virtual string toString();
-};
+int Jet::getNumEngines()
+{
+    return numberOfEngines;
+}
 
-#endif
+void Jet::setNumEngines(int numEngines)
+{
+    if (numEngines >= 1)
+        numberOfEngines = numEngines;
+	else
+        // Users cant not specify that a Jet has less than one engine.
+		numberOfEngines = 1;
+}
+
+double Jet::mileageEstimate(double time)
+{
+	// time is given in minutes.
+    // Random number generator generates a number between 40 and 100 that represents the miles per minute of the Jet.
+	double mileage = time*(rand()%61 + 40);
+	
+	// The total mileage goes up 5.5% for every engine it has after 2 engines.
+    if (fuelType == "Rocket" && numberOfEngines > 2)
+	{
+        mileage += mileage * (0.055 * numberOfEngines);
+    }
+    return mileage;
+}
+
+string Jet::toString()
+{
+    return "-> Jet\n" + PoweredVehicle::toString() + "\n\tNumber of Engines: " + to_string(numberOfEngines);
+}
