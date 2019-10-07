@@ -1,13 +1,16 @@
 #include <iostream>
 #include "Car.h"
 #include "Bicycle.h"
+#include "Jet.h"
+#include "Skateboard.h"
+#include "Train.h"
 
 void printVehiclesRoster(Vehicle **vehicles, int size);
 
 int main() {
     std::cout << "Driving simulator" << std::endl;
-    int size = 6;
-    int capacity = 10;
+    int size = 12;
+    int capacity = 15;
     Vehicle **vehiclesArray = new Vehicle *[capacity];
 
     vehiclesArray[0] = new Car();
@@ -16,7 +19,14 @@ int main() {
     vehiclesArray[3] = new Car("Tesla", "T2", "electricity", "large");
     vehiclesArray[4] = new Bicycle("Mizuno", "Wave", 10);
     vehiclesArray[5] = new Car("BMW", "X5", "diesel", "grande");
-
+    vehiclesArray[6] = new Jet();
+    vehiclesArray[7] = new Jet("Cessna", "F-3", "Rocket", 3);
+    vehiclesArray[8] = new Jet("RedWing", "airhawk", "Diesel", 2);
+    vehiclesArray[9] = new Skateboard("Element", "Oak");
+    vehiclesArray[10] = new Train("Alstom", "Bullet", "diesel", "passenger", true);
+    vehiclesArray[11] = new Train("Hott", "steel heel", "diesel", "freight", false);
+	
+    
     printVehiclesRoster(vehiclesArray, size);
 
     if (vehiclesArray != 0) { // If it is not a null pointer
@@ -35,6 +45,6 @@ void printVehiclesRoster(Vehicle **vehicles, int size) {
         cout << i << " " << vehicles[i]->toString() << endl;
         cout << "\tWould travel: "
              << vehicles[i]->mileageEstimate(simulatedDistance) << " miles in "
-             << simulatedDistance << " seconds" << endl;
+             << simulatedDistance << " minutes" << endl;
     }
 }
